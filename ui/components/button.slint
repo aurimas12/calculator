@@ -1,0 +1,20 @@
+export component CalculatorButton inherits Rectangle {
+    in property <string> text: "0"; // Mygtuko tekstas
+
+    width: 60px;
+    height: 60px;
+    border-radius: 8px; // Apvalinti kampai
+    background: #4285F4; // Mygtuko spalva (mėlyna)
+    border-width: 2px;
+    border-color: #3367D6;
+
+    // Tekstas mygtuko viduje
+    Text {
+        text: root.text;
+        color: white;
+        font-size: 20px;
+        vertical-alignment: center;
+        horizontal-alignment: center;
+
+    }
+}

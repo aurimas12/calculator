@@ -1,0 +1,182 @@
+import { Button, VerticalBox } from "std-widgets.slint";
+import { GridBox, Button, Slider,HorizontalBox  } from "std-widgets.slint";
+import { CalculatorButton } from "components/button.slint";
+
+
+export component AppWindow inherits Window {
+    in-out property <int> counter: 42;
+    in-out property <string> displayText:"0";
+    callback request-increase-value();
+    height: 400px;
+    width: 400px;
+
+    HorizontalLayout {
+        // Side panel - arithmetic
+        Rectangle {
+//            background: green;
+            width: 4px;
+            VerticalLayout {
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "+";
+                    }
+                }
+
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "-";
+                    }
+                }
+
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "/";
+                    }
+                }
+
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "*";
+                    }
+                }
+
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "=";
+                    }
+                }
+
+                Rectangle {
+                    width: 72px;
+//                    border-color: blue;
+                    border-width: 8px;
+                    drop-shadow-offset-x: 0rem;
+                    drop-shadow-offset-y: 0mm;
+                    CalculatorButton {
+                        text: "del";
+                    }
+                }
+            }
+        }
+    }
+
+    GridLayout {
+
+        height: 350px;
+        width: 220px;
+        spacing: 10px; // tarpas tarp stulpelių
+        padding: 10px; // tarpas aplink tinklelį
+        Rectangle {
+                    height: 60px; // Aukštis ekrano
+                    width: 90%; // Užima visą plotį
+                    background: #99AEDE; // Fono spalva
+                    border-color: #3367D6; // Krašto spalva
+                    border-width: 2px; // Krašto plotis
+                    Text {
+                        text: root.displayText; // Rodomas tekstas
+                        font-size: 24px; // Šrifto dydis
+                        color: black; // Teksto spalva
+                        horizontal-alignment: center; // Tekstas centre
+                        vertical-alignment: center; // Tekstas centre
+                    }col: 0;
+                                 row: 0;
+                                 colspan: 4;
+                }
+//        Button {
+//            text: "12";
+//            col: 0;
+//            row: 0;
+//            colspan: 4;
+//        }
+
+        CalculatorButton {
+            text: "7";
+            col: 1;
+            row: 1;
+        }
+
+        CalculatorButton {
+            text: "8";
+            col: 2;
+            row: 1;
+        }
+
+        CalculatorButton {
+            text: "9";
+            col: 3;
+            row: 1;
+        }
+
+        CalculatorButton {
+            text: "5";
+            col: 2;
+            row: 2;
+        }
+
+        CalculatorButton {
+            text: "6";
+            col: 3;
+            row: 2;
+        }
+
+        CalculatorButton {
+            text: "4";
+            col: 1;
+            row: 2;
+        }
+
+        CalculatorButton {
+            text: "1";
+            col: 1;
+            row: 3;
+        }
+
+        CalculatorButton {
+            text: "2";
+            col: 2;
+            row: 3;
+        }
+
+        CalculatorButton {
+            text: "3";
+            col: 3; // centrinė pozicija apatinėje eilutėje
+            row: 3;
+        }
+
+        CalculatorButton {
+            text: "0";
+            col: 2;
+            row: 4;
+        }
+        CalculatorButton {
+                    text: "C";
+                    col: 5;
+                    row: 0;
+                }
+    }
+}
